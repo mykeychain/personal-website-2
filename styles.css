@@ -8,12 +8,18 @@ body {
     margin: 0 6rem;
 }
 
+@media only screen and (max-width: 768px) {
+    .section {
+        margin: 0 5vw;
+    }
+}
+
 .icon-container a:visited {
     color: inherit;
 }
 
 .icon-container a:hover {
-    color: red;
+    color: cornflowerblue;
 }
 
 .email-button {
@@ -23,7 +29,7 @@ body {
 }
 
 .email-button:hover {
-    color: red;
+    color: cornflowerblue;
     cursor: pointer;
 }
 
@@ -118,6 +124,7 @@ body {
 
     font-size: 18px;
     font-family: "Roboto";
+    line-height: 1.75rem;
 }
 
 .about-title, .about-paragraph {
@@ -200,6 +207,7 @@ body {
     margin-top: 1rem;
     background-color: whitesmoke;
     padding: 1rem;
+    line-height: 1.40rem;
 }
 
 .pl-icons, 
@@ -207,6 +215,14 @@ body {
     margin-top: 1rem;
     font-size: 22px;
     position: relative;
+    width: 8rem;
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 0.25rem 0;
+}
+
+.pr-icons {
+    margin-right: 0;
+    margin-left: auto;
 }
 
 .pl-icons a {
@@ -218,6 +234,15 @@ body {
     text-decoration: none;
     margin-left: 0.75rem;
     color: inherit;
+}
+
+@media only screen and (max-width: 1200px) {
+    .pl-text {
+        grid-column-end: 8;
+    }
+    .pr-text {
+        grid-column-end: 6;
+    }
 }
 
 @media only screen and (max-width: 992px) {
@@ -236,6 +261,7 @@ body {
     .pl-img {
         margin-top: 0.75rem;
         grid-row: 2/3;
+        grid-column-start: 2;
     }
     .pr-text {
         grid-column-end: 2;
@@ -243,13 +269,14 @@ body {
     .pr-img {
         margin-top: 0.75rem;
         grid-row: 2/3;
+        grid-column-end: 12;
     }
 }
 
 /****************************************************************** SKILLS */
 
 .skills {
-    height: 45rem;
+    height: 40rem;
 }
 
 .skills-title, .skills-col {
