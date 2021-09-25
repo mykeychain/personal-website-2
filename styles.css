@@ -1,0 +1,341 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Mr+Dafoe&family=Work+Sans:wght@500&display=swap");
+
+body {
+    font-weight: 300;
+}
+
+.section {
+    margin: 0 6rem;
+}
+
+.icon-container a:visited {
+    color: inherit;
+}
+
+.icon-container a:hover {
+    color: red;
+}
+
+.email-button {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+
+.email-button:hover {
+    color: red;
+    cursor: pointer;
+}
+
+/****************************************************************** NAVBAR */
+
+.navbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(1px);
+    height: 4rem;
+    font-size: 23px;
+    z-index: 4;
+}
+
+.navbar-contents {
+    padding: 1rem 2rem 0 2rem;
+}
+
+.navbar .name {
+    font-family: 'Mr Dafoe';
+}
+
+.navbar .socials {
+    float: right;
+}
+
+.navbar .socials a {
+    margin-left: 0.5rem;
+    text-decoration: none;
+}
+
+.socials .email-button {
+    font-size: 23px;
+}
+
+/****************************************************************** LANDING */
+
+.landing-page {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    min-height: 45rem;
+    height: 100vh;
+}
+
+.landing-page .title { 
+    font-family: 'Mr Dafoe';
+    font-size: 115px;
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+}
+
+.landing-page .subtitle {
+    font-family: "Roboto", sans-serif;
+    font-size: 45px;
+    margin-top: 0.25rem;
+}
+
+.landing-img {
+    height: auto;
+    width: 300px;
+}
+
+/****************************************************************** ABOUT */
+
+.section-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 3fr);
+    height: auto;
+}
+
+.header {
+    font-family: "Work Sans";
+    font-size: 130px;
+    color: whitesmoke;
+}
+
+.about {
+    height: 40rem;
+}
+
+.about-title {
+    grid-column-start: 2;
+    grid-column-end: 11;
+}
+
+.about-paragraph {
+    grid-column-start: 5;
+    grid-column-end: 12;
+    padding-top: 3rem;
+
+    font-size: 18px;
+    font-family: "Roboto";
+}
+
+.about-title, .about-paragraph {
+    grid-row: 1/2;
+}
+
+/****************************************************************** PROJECT */
+
+.projects {
+    margin-bottom: 20rem;
+}
+
+.project {
+    display: grid;
+    grid-template-columns: repeat(12, 3fr);
+    margin-bottom: 17rem;
+}
+
+.project *{
+    grid-row: 1/2;
+}
+
+.project img {
+    width: 560px;
+    height: 350px;
+    filter: grayscale(80%);
+    z-index: 0;
+}
+
+@media only screen and (min-width: 1300px) {
+    .project img {
+        width: 840px;
+        height: 525px;
+    }
+}
+
+.project img:hover {
+    filter: none;
+    transition: 0.25s;
+}
+
+.pl-text {
+    grid-column-start: 2;
+    grid-column-end: 7;
+    font-family: 'Roboto', sans-serif;
+    z-index: 1;
+}
+.pr-text {
+    grid-column-start: 12;
+    grid-column-end: 7;
+    font-family: 'Roboto', sans-serif;
+    text-align: end;
+    z-index: 1;
+}
+
+.pl-text div, .pr-text div {
+    display: block;
+}
+.pl-img {
+    grid-column-start: 6;
+    grid-column-end: 12;
+    justify-self: end;
+}
+.pr-img {
+    grid-column-start: 2;
+    grid-column-end: 8;
+}
+
+.p-title {
+    margin-top: 2rem;
+    font-size: 24px;
+    font-weight: 400;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+.p-subtitle {
+    margin-top: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+.p-desc {
+    margin-top: 1rem;
+    background-color: whitesmoke;
+    padding: 1rem;
+}
+
+.pl-icons, 
+.pr-icons {
+    margin-top: 1rem;
+    font-size: 22px;
+    position: relative;
+}
+
+.pl-icons a {
+    text-decoration: none;
+    margin-right: 0.75rem;
+    color: inherit;
+}
+.pr-icons a {
+    text-decoration: none;
+    margin-left: 0.75rem;
+    color: inherit;
+}
+
+@media only screen and (max-width: 992px) {
+    .pl-text {
+        grid-column-end: 10;
+    }
+    .pr-text {
+        grid-column-end: 4;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .pl-text {
+        grid-column-end: 12;
+    }
+    .pl-img {
+        margin-top: 0.75rem;
+        grid-row: 2/3;
+    }
+    .pr-text {
+        grid-column-end: 2;
+    }
+    .pr-img {
+        margin-top: 0.75rem;
+        grid-row: 2/3;
+    }
+}
+
+/****************************************************************** SKILLS */
+
+.skills {
+    height: 45rem;
+}
+
+.skills-title, .skills-col {
+    grid-row: 1/2;
+}
+
+.skills-title {
+    grid-column-start: 2;
+    grid-column-end: 12;
+    justify-self: end;
+
+    font-family: "Work Sans";
+    font-size: 140px;
+    color: whitesmoke;
+}
+
+.skills-col {
+    padding-top: 5rem;
+
+    font-size: 18px;
+    font-family: "Roboto";
+}
+
+.skills-header {
+    font-weight: 400;
+}
+
+.skills-col ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills-lang {
+    grid-column-start: 2;
+    grid-column-end: 5;
+}
+.skills-lib-frame {
+    grid-column-start: 5;
+    grid-column-end: 8;
+}
+.skills-tools {
+    grid-column-start: 8;
+    grid-column-end: 10;
+}
+
+/****************************************************************** CONTACT */
+
+.contact {
+    height: 30rem;
+}
+
+.contact-title {
+    grid-column-start: 2;
+    grid-column-end: 8;
+}
+
+.contact-title, .ci {
+    grid-row: 1/2;
+}
+
+.ci {
+    font-size: 45px;
+    text-align: center;
+    align-self: end;
+
+    margin-top: 5.5rem;
+}
+
+.ci .email-button {
+    font-size: 45px;
+}
+
+.c-1 {
+    grid-column-start: 5;
+}
+.c-2 {
+    grid-column-start: 7;
+}
+.c-3 {
+    grid-column-start: 9;
+}
+.c-4 {
+    grid-column-start: 11;
+}
+
+.cd {
+    font-size: 18px;
+    font-family: "Roboto", sans-serif
+}
