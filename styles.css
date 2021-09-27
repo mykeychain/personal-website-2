@@ -14,12 +14,17 @@ body {
     }
 }
 
+.icon-container a {
+    color: black;
+}
+
 .icon-container a:visited {
     color: inherit;
 }
 
 .icon-container a:hover {
     color: cornflowerblue;
+    transition-duration: 0.2s;
 }
 
 .email-button {
@@ -30,6 +35,7 @@ body {
 
 .email-button:hover {
     color: cornflowerblue;
+    transition-duration: 0.2s;
     cursor: pointer;
 }
 
@@ -320,6 +326,10 @@ body {
 .skills-tools {
     grid-column-start: 8;
     grid-column-end: 10;
+}
+
+.skills-list * {
+    line-height: 1.75rem;
 }
 
 /****************************************************************** CONTACT */
