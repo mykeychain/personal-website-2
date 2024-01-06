@@ -14,6 +14,13 @@
         <div class="navbar-contents">
             <span class="name">Mike Chang</span>
             <span class="socials icon-container">
+                <span class="dark-mode-container">
+                    Dark Mode
+                    <label class="dark-mode-switch">
+                        <input class="dark-mode-input" type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </span>
                 <button class="email-button" onclick="copyEmail()">
                     <i class="bi bi-envelope-fill"></i>
                 </button>
@@ -172,6 +179,21 @@
             await navigator.clipboard.writeText("mchang95@gmail.com");
             alert("Email copied to clipboard.");
         }
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkbox = document.querySelector('.dark-mode-input');
+            const body = document.querySelector('body');
+
+            checkbox.checked = localStorage.getItem('darkMode') === 'true';
+            if (checkbox.checked) {
+                body.classList.add('dark-mode');
+            }
+            
+
+            checkbox.addEventListener('change', function (event) {
+                localStorage.setItem('darkMode', event.currentTarget.checked);
+                body.classList.toggle('dark-mode');
+            });
+        });
     </script>
 </body>
 </html>
