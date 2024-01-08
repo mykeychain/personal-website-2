@@ -55,6 +55,77 @@
             </div>
         </div>
     </div>
+    <div class="work-page section">
+        <div class="work-container section-grid">
+            <div class="header work-title">
+                HISTORY
+            </div>
+            <div class="work-selector-container">
+                <ul class="work-selector">
+                    <li id="odoo-title" class="work-selector-item selected">
+                        Odoo
+                    </li>
+                    <li id="rithm-title" class="work-selector-item">
+                        Rithm
+                    </li>
+                </ul>
+            </div>
+            <div class="work-listing-container">
+                <div id="odoo-listing" class="work-listing selected">
+                    <div class="listing-title"><span>Technical Lead</span> @ <span class="listing-company">Odoo</span></div>
+                    <div>December 2020 - Present</div>
+                    <div class="listing-description">
+                        <p>
+                            Odoo is a comprehensive enterprise suite that serves diverse business needs. Our stack is a Postgresql
+                            database, Python backend, XML templating, and component-based Javascript framework for frontend
+                            dynamics. The Professional Services team creates customizations that tailor the Odoo experience for each client.                             
+                        </p>
+                        <ul>
+                            <li>
+                                Collaborated closely with Odoo consultants in bi-weekly meetings to ascertain client requirements and
+                                strategize development plans tailored to their needs
+                            </li>
+                            <li>
+                                Managed project timeline by estimating hours required for each feature development and organizing weekly
+                                sprint plans with clearly defined deliverables
+                            </li>
+                            <li>
+                                Spearheaded the re-design and transformation of Odoo’s online portal for the client's subcontractors,
+                                emphasizing intuitive navigation for a non-technical audience
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="rithm-listing" class="work-listing">
+                    <div class="listing-title"><span>Software Development Intern</span> @ <span class="listing-company">Rithm</span></div>
+                    <div>September 2020 - October 2020</div>
+                    <div class="listing-description">
+                        <p>
+                            The Student Information System is the primary tool used by staff and students to upload, access, and maintain
+                            lecture materials, exercises, assessments, and solutions. 
+                        </p>
+                        <ul>
+                            <li>
+                                Streamlined workflow and enhanced quality of life usage of staff management platform by adding various
+                                features in Django such as “Publish All” and “Manage” buttons
+                            </li>
+                            <li>
+                                Improved reusability of styles and decreased repetition within stylesheet by converting the color schemes in
+                                some components from CSS to Sass
+                            </li>
+                            <li>
+                                Enhanced caching efficiency and eliminated potential for delivering stale data by switching caching backends
+                                from LocMemCache to Redis
+                            </li>
+                            <li>
+                                Maintained 100% test coverage through added features by authoring various unit and integration tests
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="projects section">
         <div class="project">
             <img class="pl-img" src="./wonderwall-sample.png" alt="">
@@ -187,12 +258,32 @@
             if (checkbox.checked) {
                 body.classList.add('dark-mode');
             }
-            
 
             checkbox.addEventListener('change', function (event) {
                 localStorage.setItem('darkMode', event.currentTarget.checked);
                 body.classList.toggle('dark-mode');
             });
+
+            const selectorList = document.querySelector('.work-selector')
+            const listingContainer = document.querySelector('.work-listing-container')
+
+            function clearSelected(parentElement) {
+                for (const child of parentElement.children) {
+                    child.classList.remove('selected');
+                }
+            }
+
+            for (const selector of selectorList.children) {
+                selector.addEventListener('click', function (event) {
+                    let idList = event.currentTarget.id.split('-');
+                    let listingId = idList[0] + '-listing';
+                    clearSelected(selectorList);
+                    clearSelected(listingContainer);
+                    event.currentTarget.classList.toggle('selected');
+                    document.querySelector(`#${listingId}`).classList.toggle('selected');
+
+                })
+            }
         });
     </script>
 </body>
