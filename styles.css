@@ -318,7 +318,6 @@ input:checked + .slider:before {
 .project img {
     width: 560px;
     height: 350px;
-    filter: grayscale(80%);
     z-index: 0;
     grid-row: 1/3;
 }
@@ -326,13 +325,8 @@ input:checked + .slider:before {
 @media only screen and (min-width: 1300px) {
     .project img {
         width: 840px;
-        height: 525px;
+        height: auto;
     }
-}
-
-.project img:hover {
-    filter: none;
-    transition: 0.25s;
 }
 
 .pl-text {
